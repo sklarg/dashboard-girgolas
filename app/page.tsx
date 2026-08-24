@@ -116,9 +116,9 @@ export default function Dashboard() {
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={lecturas}>
               <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
-              <XAxis dataKey="created_at" tickFormatter={(t) => new Date(t).toLocaleTimeString()} stroke="#94a3b8" />
+              <XAxis dataKey="created_at" tickFormatter={(t: any) => (t ? new Date(t).toLocaleTimeString() : '')} stroke="#94a3b8" />
               <YAxis stroke="#94a3b8" />
-              <Tooltip labelFormatter={(t) => new Date(t).toLocaleString()} contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155' }} />
+              <Tooltip labelFormatter={(t: any) => (t ? new Date(t).toLocaleString() : '')} contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155' }} />
               <Line type="monotone" dataKey="temperatura" stroke="#10b981" strokeWidth={2} dot={false} />
             </LineChart>
           </ResponsiveContainer>
